@@ -217,11 +217,12 @@ em {
 /*main*/
 .main {
 	overflow: hidden;
-	/*position: relative;*/
+	position: relative;
 }
 .main .inner {
 	max-width: 1532px;  
 	position: relative; 
+	height:100%;
 }
 .main .visual li {
 	height:100vh;
@@ -1248,7 +1249,7 @@ footer > .logo img {
 }
 .main .visual li .textwrap {
 	right:50%;
-	top: 600px;
+	top: 585px;
 	transform: translateX(50%);
 	text-align: center;
 }

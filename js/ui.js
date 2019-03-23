@@ -81,8 +81,8 @@ function portfolioWork() {
     var designcontents = portfolioElem.querySelectorAll(".contain ul")
     var sitePage = portfolioElem.querySelector(".site_slider");
     var targetAs = sitePage.querySelectorAll(".site_slider .subcon");
-    var imgPage = portfolioElem.querySelector(".p_page > img");
-    var closeBtn = portfolioElem.querySelector(".p_page > span");
+    var pageElem = portfolioElem.querySelector(".p_page");
+    var imgPage = pageElem.querySelector(".p_page > img");
     
     for ( var i = 0; i < designtabs.length; i++) {
         designtabs[i].onclick = ( function(j) {
@@ -110,23 +110,20 @@ function portfolioWork() {
     // 디자인 상세페이지
     for ( var i = 0; i < designcontents.length; i++) {
         designcontents[i].addEventListener("click", function pageWork(e) {
-            console.log(e.target)
             if (e.target.tagName === "SPAN" || e.target.tagName === "STRONG") {
                 var imgSrc = e.target.parentNode.getAttribute("href");
                 imgPage.setAttribute("src", imgSrc);
                 pageOn();
-            }
-            if (e.target.tagName === "A") {
+            } else if (e.target.tagName === "A") {
                 var imgSrc = e.target.getAttribute("href");
                 imgPage.setAttribute("src", imgSrc);
                 pageOn();
-            }
+            } 
             e.preventDefault();
         })
     }
     // 사이트슬라이드 상세페이지    
     sitePage.addEventListener("click", function slideWork(e) {
-        console.log(e.target)
         if (targetAs) {
             for (var i = 0; i < targetAs.length; i++) {
             targetAs[i].setAttribute("target", "_blank");
@@ -151,13 +148,12 @@ function portfolioWork() {
     }
 
 
+
     // 상세페이지 닫기
-    closeBtn.addEventListener("click", function closeWork(e) {
+    pageElem.addEventListener("click", function closeWork(e) {
         e.preventDefault();
-        if (this) {
-            imgPage.parentNode.classList.remove("on");
-        } else {
-            imgPage.parentNode.classList.add("on");
+        if (e.target) {
+            pageElem.classList.remove("on");
         }
     })
         
