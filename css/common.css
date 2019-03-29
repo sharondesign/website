@@ -987,16 +987,22 @@ footer > .logo {
 }
 .main .visual li .textwrap {
 	right:50%;
-	top: 615px;
+	top: 500px;
 	transform: translateX(50%);
 	text-align: center;
 }
+.main .visual li .textwrap h1.main_text2 {
+	margin-top: 20px;
+}
 .main .visual li .textwrap h1 img {
-	width: 380px;
+	width: 330px;
 }
 .main .visual li .textwrap span {
 	display: inline;
 	text-align: center;
+}
+.main .line {
+	top:320px;
 }
 .main .line img {
 	width: 730px; 
@@ -1024,7 +1030,7 @@ footer > .logo {
 	padding:150px 0;
 }
 .section h2 {
-	font-size: 40px;
+	font-size: 36px;
 }
 .section h2 > span {
 	font-size: 60px;
@@ -1133,7 +1139,7 @@ footer > .logo {
 	padding-top:100px;
 }
 .portfolio .web h3 {
-	font-size: 36px;
+	font-size: 24px;
 }
 .portfolio .web p {
 	font-size: 14px;
