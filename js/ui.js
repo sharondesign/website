@@ -1,4 +1,5 @@
-window.addEventListener("load", function(){
+$(window).on('load resize',function(){
+  
 scrollWork();
 portfolioWork();
 
@@ -9,19 +10,22 @@ function scrollWork() {
     var headerElem = htmlElem.querySelector(".header_fixed");
     var m_btn = headerElem.querySelector(".mobile_btn");
     var navElem = headerElem.querySelector (".nav");
+
     document.addEventListener("scroll", counter);
     var i = 0;
+    myHeight = 0;
+    myHeight = window.innerHeight;
+
     function counter () {
         i += 1;
         var scrollHeight = htmlElem.scrollTop;
-        if(scrollHeight > 850) {
+        if(scrollHeight > myHeight) {
             headerElem.classList.add("on");
             navElem.classList.remove("on");
             m_btn.classList.remove("on");
-            document.querySelector(".inner > .profile").classList.add("on");
-        } if (scrollHeight > 2200) {
-            document.querySelector(".about .motto").classList.add("on");
-        } else if (scrollHeight < 850) {
+            htmlElem.querySelector(".inner > .profile").classList.add("on");
+            htmlElem.querySelector(".about .motto").classList.add("on");
+        } else if (scrollHeight < myHeight) {
             headerElem.classList.remove("on");
             navElem.classList.remove("on");
             m_btn.classList.remove("on");
@@ -42,8 +46,7 @@ function scrollWork() {
     
 // 부드러운 스크롤 내리기
     var $navmenu = $('.nav > li > a'),
-    $contents = $('.section'),
-    $doc = $('html, body'); 
+    $contents = $('.section')
 
     $(function () {
         $navmenu.on('click', function(e){ 
@@ -51,7 +54,7 @@ function scrollWork() {
             idx     = $target.index(),
             section = $contents.eq(idx),
             offsetTop = section.offset().top; 
-            $doc.stop()
+            $('html, body').stop()
              .animate({scrollTop :offsetTop}, 500);
              return false;
             });

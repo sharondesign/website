@@ -35,13 +35,6 @@ function scrollWork() {
 
     document.addEventListener("mousewheel", lastEvent);
 
-    // window.addEventListener("resize", resizeWork);
-    // resizeWork();
-    // function resizeWork() {
-    //     var windowHeight = window.innerHeight;
-    //     console.log(windowHeight)
-        
-    // }
     var setT;
     function lastEvent(e) {
         clearTimeout(setT);
@@ -58,25 +51,16 @@ function scrollWork() {
             // 스크롤 올렸음
             지난ScrollTop -= browserSize;
             $('html, body').animate({scrollTop:지난ScrollTop});
-            // console.log("스크롤 올렸음");
+            console.log("스크롤 올렸음");
             console.log("지난ScorollTop : " + 지난ScrollTop);
             console.log("브라우저창높이 : " + browserSize);
-            // console.log("현재델타Y : " + e.wheelDeltaY);
-            // console.log("지난델타Y : " + 지난DeltaY);
+            console.log("현재델타Y : " + e.wheelDeltaY);
+            console.log("지난델타Y : " + 지난DeltaY);
         } else {
             // 스크롤 내렸음
             지난ScrollTop += browserSize;
             $('html, body').animate({scrollTop:지난ScrollTop});
-            
-            // htmlElem.scrollTop += browserSize;
-            // console.log("스크롤 내렸음");
-            console.log("지난ScorollTop : " + 지난ScrollTop);
-            // console.log("브라우저창높이 : " + browserSize);
-            // console.log("현재델타Y : " + e.wheelDeltaY);
-            // console.log("지난델타Y : " + 지난DeltaY);
-        };
-        
-        if (지난ScrollTop > 스크롤된높이) {
+            if (지난ScrollTop > 스크롤된높이) {
             console.log("스크롤된높이 : " + 스크롤된높이);
             console.log("browserSize: " + browserSize);
             appDown.classList.add("on");
@@ -91,22 +75,31 @@ function scrollWork() {
             rider.classList.remove("on");
         }
         
-        if (지난ScrollTop > 500) {
+        if (지난ScrollTop === browserSize) {
             bike.classList.add("on");
         }
-        if (지난ScrollTop > 1000) {
+        if (지난ScrollTop > browserSize) {
             people.classList.add("on");
         }
-        if (지난ScrollTop > 1900) {
+        if (지난ScrollTop > browserSize) {
             pay.classList.add("on");
         }
-        if (지난ScrollTop > 3000) {
+        if (지난ScrollTop > browserSize) {
             headerLogo.classList.add("on");
             headerSns.classList.add("on");
         } else if (지난ScrollTop < 3000) {
             headerLogo.classList.remove("on");
             headerSns.classList.remove("on");
         }
+            // htmlElem.scrollTop += browserSize;
+            console.log("스크롤 내렸음");
+            console.log("지난ScorollTop : " + 지난ScrollTop);
+            console.log("브라우저창높이 : " + browserSize);
+            console.log("현재델타Y : " + e.wheelDeltaY);
+            console.log("지난델타Y : " + 지난DeltaY);
+        };
+        
+        
     }
 
     var $scroll_btn = $('.scroll_btn > li > a'),
