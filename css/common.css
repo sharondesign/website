@@ -217,7 +217,6 @@ em {
 .main {
 	overflow: hidden;
 	position: relative;
-	height:100vh;
 }
 .main .inner {
 	max-width: 1532px;  
@@ -227,6 +226,7 @@ em {
 .main .visual li {
 	height:100vh;
 	position: relative;
+	overflow: hidden;
 }
 .main .visual li .main_img {
 	position: absolute;
@@ -904,11 +904,7 @@ footer > .logo {
 
 /*------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
-.main {
-	overflow: hidden;
-	position: relative;
-	height:100vh;
-}	
+	
 .header_fixed {
 	height:auto;
 }
@@ -972,6 +968,9 @@ footer > .logo {
 .main .visual li.main1 {
 	background: url('../images/main1_1024.jpg')no-repeat 0 0 / 200%, 200%;
 }	
+.main .visual li.main2 {
+	background: url('../images/main2.jpg')no-repeat 0 0;
+}	
 .main .visual li .main_img {
 	top:10%;
 	left:0;
@@ -985,12 +984,12 @@ footer > .logo {
 	transform: translateX(-50%);
 }
 .main .visual li .main_img .pc {
-	width:400px;/*65.104166%;*/
+	width:70%;/*65.104166%;*/
 }
 .main .visual li .main_img .tab {
-	width:200px;/*39.0625%; */ 
-	margin-top: 220px;
-	margin-left:140px;
+	width:40%;/*39.0625%; */ 
+	margin-top: 40%;
+	margin-left:30%;
 }
 .main .visual li .textwrap {
 	right:50%;
