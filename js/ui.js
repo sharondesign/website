@@ -1,5 +1,5 @@
-$(window).on('load resize',function(){
-  
+window.addEventListener("load", function(){
+    
 scrollWork();
 portfolioWork();
 
@@ -10,26 +10,49 @@ function scrollWork() {
     var headerElem = htmlElem.querySelector(".header_fixed");
     var m_btn = headerElem.querySelector(".mobile_btn");
     var navElem = headerElem.querySelector (".nav");
-
-    document.addEventListener("scroll", counter);
     var i = 0;
-    myHeight = 0;
-    myHeight = window.innerHeight;
+    var browserSize;
+    browserSize = 0;
+    browserSize = window.innerHeight;
+    
+    // 사이즈 변경
+    window.addEventListener("resize", resizeWork);
+    function resizeWork() {
+        browserSize = window.innerHeight;
+        var resizeTimeoutId;
+        function window_resize(e) {
+            window.clearTimeout(resizeTimeoutId);
+            resizeTimeoutId = window.setTimeout('doResizeCode();', 200);
+        }    
+    }
 
+    //스크롤 이벤트
+    document.addEventListener("scroll", counter);
     function counter () {
         i += 1;
         var scrollHeight = htmlElem.scrollTop;
-        if(scrollHeight > myHeight) {
+        var profile = htmlElem.querySelector(".inner > .profile");
+        var motto = htmlElem.querySelector(".about .motto");
+        var mottoOffset = motto.offsetTop - 500;
+
+        if(scrollHeight > browserSize) {
             headerElem.classList.add("on");
             navElem.classList.remove("on");
             m_btn.classList.remove("on");
-            htmlElem.querySelector(".inner > .profile").classList.add("on");
-            htmlElem.querySelector(".about .motto").classList.add("on");
-        } else if (scrollHeight < myHeight) {
+            profile.classList.add("on");
+
+            if (window.pageYOffset  >= mottoOffset) {
+                motto.classList.add("on");
+                // console.log("mottoOffset:" + mottoOffset)
+                // console.log("window.pageYOffset:"+ window.pageYOffset)
+            }
+            
+        } else if (scrollHeight < browserSize) {
             headerElem.classList.remove("on");
             navElem.classList.remove("on");
             m_btn.classList.remove("on");
         }
+
     }
 
     // 모바일버튼 

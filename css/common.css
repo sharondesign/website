@@ -904,6 +904,11 @@ footer > .logo {
 
 /*------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
+.main {
+	overflow: hidden;
+	position: relative;
+	height:100vh;
+}	
 .header_fixed {
 	height:auto;
 }
@@ -965,7 +970,7 @@ footer > .logo {
 	width: 20px;
 }
 .main .visual li.main1 {
-	background: url('../images/main1_1024.jpg')no-repeat 0 0;
+	background: url('../images/main1_1024.jpg')no-repeat 0 0 / 200%, 200%;
 }	
 .main .visual li .main_img {
 	top:10%;
@@ -1103,6 +1108,7 @@ footer > .logo {
 	margin-top: 120%;
 }
 .about .motto {
+	transform: translateY(100%);
 	margin-top: 100px;
 }
 .about .col2 .col.right {
