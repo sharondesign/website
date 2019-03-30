@@ -149,6 +149,7 @@ em {
 	border: none; box-shadow:none;
 	margin-bottom: 0;
 }
+.main .bx-wrapper {overflow: hidden;}
 .main .bx-wrapper .bx-controls-direction {display: none;}
 .main .bx-wrapper .bx-controls.bx-has-pager .bx-pager {
 	text-align:center;
@@ -226,7 +227,6 @@ em {
 .main .visual li {
 	height:100vh;
 	position: relative;
-	overflow: hidden;
 }
 .main .visual li .main_img {
 	position: absolute;
