@@ -880,6 +880,7 @@ em {
 	left:50%;
 	top:10%;
 	transform: translateX(-50%);
+	z-index: 100;
 }
 .p_page.on .btn_close {
 	position: absolute;
@@ -967,10 +968,7 @@ footer > .logo {
 }
 .main .visual li.main1 {
 	background: url('../images/main1_1024.jpg')no-repeat 0 0 / 200%, 200%;
-}	
-.main .visual li.main2 {
-	background: url('../images/main2.jpg')no-repeat 0 0;
-}	
+}		
 .main .visual li .main_img {
 	top:10%;
 	left:0;
