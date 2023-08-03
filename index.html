@@ -25,7 +25,9 @@ $(document).ready(function(){
 		moveSlides: 1,
 		autoHover : true,
 		slideWidth :350,
-		touchEnabled : false
+		speed: 200,
+		touchEnabled : (navigator.maxTouchPoints > 0),
+		swipeThreshold: 20
 	});
 	$('.page.slider').bxSlider({
 		auto:true,
@@ -34,7 +36,9 @@ $(document).ready(function(){
 		moveSlides: 1,
 		autoHover : true,
 		slideWidth :300,
-		touchEnabled : false
+		speed: 200,
+		touchEnabled : (navigator.maxTouchPoints > 0),
+		swipeThreshold: 10
 	});
 });
 </script>
